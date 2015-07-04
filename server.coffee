@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 app.get '/', (req, res) ->
   exec ' browserify -t coffeeify app.coffee > ./public/js/app.js', ->
-    res.render 'index', layout : false
+    res.render 'main', layout : false
 
 server = app.listen 3000, ->
   console.log("app listening at %d", server.address().port)
